@@ -10,7 +10,7 @@
 <h:commandLink value="cadastro" action="CadastroServico.xhtml" immediate="true"/>
 <h1>Lista de Serviços</h1>
 <h:messages/>
-<h:dataTable border="1" value="#{servicoControllerGabriel.lista}" var="servicos">
+<h:dataTable border="1" value="#{servicoControllerDarcisio.lista}" var="servicos">
 
 
 <h:column>
@@ -69,16 +69,16 @@
  <f:facet name="header">
  <h:outputText value="Açao"/>
  </f:facet>
- <h:commandButton value="editar" action="#{servicoControllerGabriel.editar}">
+ <h:commandButton value="editar" action="#{servicoControllerDarcisio.editar}">
  <f:setPropertyActionListener 
  value="#{servicos}" 
- target="#{servicoControllerGabriel.servico}"/>
+ target="#{servicoControllerDarcisio.servico}"/>
  </h:commandButton>
  
- <h:commandButton value="excluir" action="#{servicoControllerGabriel.excluir}" onclick="return confirm('confirma a exclusao ?')">
+ <h:commandButton value="excluir" action="#{servicoControllerDarcisio.excluir}" onclick="return confirm('confirma a exclusao ?')">
  <f:setPropertyActionListener
  value="#{servicos}"
- target="#{servicoControllerGabriel.servico}"/>
+ target="#{servicoControllerDarcisio.servico}"/>
  </h:commandButton>
  </h:column>
  
