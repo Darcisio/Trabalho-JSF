@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+<title>Cadastro Serviços</title>
+</h:head>
+<h:body>
+  <h:form>
+  <h:commandLink value="Mostrar Ordem de Serviço" action="ListaServico.xhtml" immediate="true"/>
+    <h1>Serviços</h1>
+    <h:messages/>
+      <h:panelGrid columns="2">
+        <h:outputText value="Cliente :"></h:outputText>
+        <h:inputText value="#{servicoControllerGabriel.servico.descC}"
+        required="true"
+        requiredMessage="O Campo Descriçao Cliente e Obrigatorio!" />
+        
+        <h:outputText value="Descriçao Do Serviço :"/>
+        <h:inputText value="#{servicoControllerGabriel.servico.descS}"
+        required="true"
+        requiredMessage="O Campo Descriçao Do Servico e Obrigatorio!" />
+        
+        <h:outputText value="Valor do Serviço :"/>
+        <h:inputText value="#{servicoControllerGabriel.servico.valor}"
+        required="true"
+        requiredMessage="O Campo Valor do Serviço e Obrigatorio!">
+        <f:validateDoubleRange minimum="1" maximum="499"/>
+        </h:inputText>
+        <h:outputText value="Quantidade de Serviço :"/>
+        <h:inputText value="#{servicoControllerGabriel.servico.qtdS}"
+        required="true"
+        requiredMessage="O Campo Quantidade de Serviço e Obrigatorio!">
+        <f:validateLongRange minimum="1"/>
+        </h:inputText>
+        <h:outputText value="Data do Serviço :"/>
+        <h:inputText value="#{servicoControllerGabriel.servico.dataexecS}"
+        required="true"
+        requiredMessage="O Campo Data do Serviço e Obrigatorio!">
+        <f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+        </h:inputText>
+        
+        <h:commandButton value="Salvar" action="#{servicoControllerGabriel.salvar}"/>
+      </h:panelGrid>
+
+  </h:form>
+</h:body>
+
+</html>
