@@ -15,35 +15,35 @@
     <h:messages/>
       <h:panelGrid columns="2">
         <h:outputText value="Cliente :"></h:outputText>
-        <h:inputText value="#{servicoControllerGabriel.servico.descC}"
+        <h:inputText value="#{servicoControllerDarcisio.servico.descC}"
         required="true"
         requiredMessage="O Campo Descriçao Cliente e Obrigatorio!" />
         
         <h:outputText value="Descriçao Do Serviço :"/>
-        <h:inputText value="#{servicoControllerGabriel.servico.descS}"
+        <h:inputText value="#{servicoControllerDarcisio.servico.descS}"
         required="true"
         requiredMessage="O Campo Descriçao Do Servico e Obrigatorio!" />
         
         <h:outputText value="Valor do Serviço :"/>
-        <h:inputText value="#{servicoControllerGabriel.servico.valor}"
+        <h:inputText value="#{servicoControllerDarcisio.servico.valor}"
         required="true"
         requiredMessage="O Campo Valor do Serviço e Obrigatorio!">
         <f:validateDoubleRange minimum="1" maximum="499"/>
         </h:inputText>
         <h:outputText value="Quantidade de Serviço :"/>
-        <h:inputText value="#{servicoControllerGabriel.servico.qtdS}"
+        <h:inputText value="#{servicoControllerDarcisio.servico.qtdS}"
         required="true"
         requiredMessage="O Campo Quantidade de Serviço e Obrigatorio!">
         <f:validateLongRange minimum="1"/>
         </h:inputText>
         <h:outputText value="Data do Serviço :"/>
-        <h:inputText value="#{servicoControllerGabriel.servico.dataexecS}"
+        <h:inputText value="#{servicoControllerDarcisio.servico.dataexecS}"
         required="true"
         requiredMessage="O Campo Data do Serviço e Obrigatorio!">
         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
         </h:inputText>
         
-        <h:commandButton value="Salvar" action="#{servicoControllerGabriel.salvar}"/>
+        <h:commandButton value="Salvar" action="#{servicoControllerDarcisio.salvar}"/>
       </h:panelGrid>
 
   </h:form>
