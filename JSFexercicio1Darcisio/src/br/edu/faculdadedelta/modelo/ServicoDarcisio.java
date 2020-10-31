@@ -2,7 +2,7 @@ package br.edu.faculdadedelta.modelo;
 
 import java.util.Date;
 
-public class ServicoGabriel {
+public class ServicoDarcisio {
 private Long id;
 private String descC;
 private String descS;
@@ -10,10 +10,10 @@ private double valor;
 private int qtdS;
 private Date dataexecS;
 
-public ServicoGabriel() {
+public ServicoDarcisio() {
 }
 
-public ServicoGabriel(long id, String descC, String descS, double valor, int qtdS, Date dataexecS) {
+public ServicoDarcisio(long id, String descC, String descS, double valor, int qtdS, Date dataexecS) {
 	this.id = id;
 	this.descC = descC;
 	this.descS = descS;
@@ -88,7 +88,7 @@ public boolean equals(Object obj) {
 		return false;
 	if (getClass() != obj.getClass())
 		return false;
-	ServicoGabriel other = (ServicoGabriel) obj;
+	ServicoDarcisio other = (ServicoDarcisio) obj;
 	if (id != other.id)
 		return false;
 	return true;
