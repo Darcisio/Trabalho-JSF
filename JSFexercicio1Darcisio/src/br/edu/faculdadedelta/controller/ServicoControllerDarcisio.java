@@ -9,24 +9,24 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import br.edu.faculdadedelta.dao.ServicoDAOGabriel;
-import br.edu.faculdadedelta.modelo.ServicoGabriel;
+import br.edu.faculdadedelta.dao.ServicoDAODarcisio;
+import br.edu.faculdadedelta.modelo.ServicoDarcisio;
 
 @ManagedBean
 @SessionScoped
-public class ServicoControllerGabriel {
-private ServicoGabriel servico = new ServicoGabriel();
-private ServicoDAOGabriel dao = new ServicoDAOGabriel();
+public class ServicoControllerDarcisio {
+private ServicoDarcisio servico = new ServicoDarcisio();
+private ServicoDAODarcisio dao = new ServicoDAODarcisio();
 
 
-public ServicoGabriel getServico() {
+public ServicoDarcisio getServico() {
 	return servico;
 }
-public void setServico(ServicoGabriel servico) {
+public void setServico(ServicoDarcisio servico) {
 	this.servico = servico;
 }
 public void limparcampos() {
-	servico = new ServicoGabriel();
+	servico = new ServicoDarcisio();
 }
 public String salvar() {
 	try {
@@ -38,13 +38,13 @@ public String salvar() {
 			limparcampos();
 	}else{
 		dao.alterar(servico);
-		FacesMessage mensagem = new FacesMessage("Alteraçao realiazada com sucesso");
+		FacesMessage mensagem = new FacesMessage("AlteraÃ§ao realiazada com sucesso");
 		FacesContext.getCurrentInstance().addMessage(null, mensagem);
 		limparcampos();
 	} 
 		}catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
-			FacesMessage mensagem = new FacesMessage("Erro ao Realizar operaçao"
+			FacesMessage mensagem = new FacesMessage("Erro ao Realizar operaÃ§ao"
 					+ " tente novamente mais tarde!!" + e.getMessage());
 			FacesContext.getCurrentInstance().addMessage(null, mensagem);
 			limparcampos();
@@ -53,12 +53,12 @@ public String salvar() {
 	return"CadastroServico.xhmtl";
 	
 }
-public List<ServicoGabriel> getlista(){
-	List<ServicoGabriel> listaRetorno = new ArrayList<ServicoGabriel>();
+public List<ServicoDarcisio> getlista(){
+	List<ServicoDarcisio> listaRetorno = new ArrayList<ServicoDarcisio>();
 	try {
 		listaRetorno = dao.listar();
 	} catch (ClassNotFoundException | SQLException e) {
-		FacesMessage mensagem = new FacesMessage("Erro ao Realizar operaçao"
+		FacesMessage mensagem = new FacesMessage("Erro ao Realizar operaÃ§ao"
 				+ " tente novamente mais tarde!!" + e.getMessage());
 		FacesContext.getCurrentInstance().addMessage(null, mensagem);
 		e.printStackTrace();
@@ -79,7 +79,7 @@ public String excluir() {
 		
 	} catch (ClassNotFoundException | SQLException e) {
 		
-		FacesMessage mensagem = new FacesMessage("Erro ao Realizar operaçao"
+		FacesMessage mensagem = new FacesMessage("Erro ao Realizar operaÃ§ao"
 				+ " tente novamente mais tarde!!" + e.getMessage());
 		FacesContext.getCurrentInstance().addMessage(null, mensagem);
 		e.printStackTrace();
